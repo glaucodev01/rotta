@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecionando para o Rotta</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const placeName = params.get("placeName");
+    if (placeName) {
+      // Redireciona para o esquema customizado do seu app
+      window.location.href = `rotta://navigate?placeName=${encodeURIComponent(placeName)}`;
+    } else {
+      document.body.innerText = "Parâmetro placeName ausente.";
+    }
+  </script>
+</head>
+<body>
+  Redirecionando para o app Rotta...
+</body>
+</html>
